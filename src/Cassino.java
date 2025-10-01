@@ -7,7 +7,7 @@ import Auxiliar.*;
 import Bac_Bo.Bac_Bo;
 import View.*;
 
-public class App {
+public class Cassino {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         
