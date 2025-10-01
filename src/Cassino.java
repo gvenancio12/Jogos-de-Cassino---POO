@@ -51,7 +51,7 @@ public class Cassino {
         
         }
         if(jogador.getBancaReais() == 0){
-            System.out.println("Sobrou nada...");
+            System.out.println("Sobra nada pro beta...");
         }
         sc.close();
     }
