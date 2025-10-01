@@ -1,0 +1,19 @@
+# Ignorar arquivos de compilação do Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignorar diretórios de compilação (bin)
+bin/
+target/
+
+# Ignorar arquivos do VS Code (alguns podem ser úteis, mas é comum ignorar)
+.vscode/
+
+# Ignorar o diretório de configurações do VS Code
+.settings/
+
+# Ignorar arquivos de cache e logs (se houver)
+*.log
+*.tmp
