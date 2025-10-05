@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Scanner;
 public class Bac_Bo {
     private Scanner sc;
-    public Jogador jogador;
+    private Jogador jogador;
     private int fichasApostadas = 0;
     private Random rand = new Random();
     private boolean acabou = false;
@@ -20,7 +20,6 @@ public class Bac_Bo {
     }
 
     public void iniciar() throws InterruptedException{
-
         while(!acabou){
             acabou = iniciarRodada();
         }
@@ -51,7 +50,6 @@ public class Bac_Bo {
 
         continuacaoDaRodada();
         
-
         return false;
     }
 
@@ -109,7 +107,7 @@ public class Bac_Bo {
         sc.nextLine();
     }
 
-        private void encerramentoEpagamento(int placarJogador, int placarDealer){
+    private void encerramentoEpagamento(int placarJogador, int placarDealer){
         String mensagemResultado;
 
         if (placarJogador > placarDealer) {
@@ -130,11 +128,11 @@ public class Bac_Bo {
         System.out.println("---------------------------");
     }
 
-    // O dado da esquerda é do Jogador, o da direita é do Dealer.
+    // O dado da esquerda é do Jogador, o da direita é do Dealer
     private void rodarDados(Random rand, ResultadoDados resultadoAnterior) throws InterruptedException{
         for (int i = 0; i < 15; i++) {
-            int f1 = rand.nextInt(Dados.frames.length); 
-            int f2 = rand.nextInt(Dados.frames.length);
+            int f1 = rand.nextInt(Dados.getFramesLength()); 
+            int f2 = rand.nextInt(Dados.getFramesLength());
 
             Control.limparTerminal(); 
             
@@ -144,7 +142,7 @@ public class Bac_Bo {
                 System.out.println("\n----------------------------------------\n");
             }
             
-            Dados.printSideBySide(Dados.frames[f1], Dados.frames[f2], 30);
+            Dados.imprimirAnimacao(f1, f2, 30);
             Thread.sleep(120 + rand.nextInt(100));
         }
     }
@@ -163,7 +161,7 @@ public class Bac_Bo {
             System.out.println(titulo);
         }
 
-        Dados.printSideBySide(Dados.faces[resultado.dadoJogador()-1], Dados.faces[resultado.dadoDealer()-1], 30);
+        Dados.imprimirResultado(resultado.dadoJogador(), resultado.dadoDealer(), 30);
         System.out.printf("Dado Jogador: %d | Dado Dealer: %d\n", resultado.dadoJogador(), resultado.dadoDealer());
     }
 

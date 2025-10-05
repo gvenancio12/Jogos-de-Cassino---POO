@@ -2,13 +2,14 @@
 import java.util.Scanner;
 
 import Blackjack.*;
+import Caca_Niquel.Caca_Niquel;
 import Perfil.*;
 import Auxiliar.*;
 import Bac_Bo.Bac_Bo;
 import View.*;
 
 public class Cassino {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, InterruptedException {
         Scanner sc = new Scanner(System.in);
         
         Control.printCassino();
@@ -37,7 +38,8 @@ public class Cassino {
                     blackjack.iniciar(sc);
                     break;
                 case 2:
-                    System.out.println("Implementar Caça-Níquel.");
+                    Caca_Niquel caca_Niquel = new Caca_Niquel(sc, jogador);
+                    caca_Niquel.inicio();
                     break;
                 case 3:
                     Bac_Bo bac_Bo = new Bac_Bo(sc, jogador);

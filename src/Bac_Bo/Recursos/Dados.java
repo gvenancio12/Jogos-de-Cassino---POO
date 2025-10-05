@@ -1,7 +1,7 @@
 package Bac_Bo.Recursos;
 
 public class Dados {
-        public static String[] frames = {
+    private static final String[] frames = {
         """
            +-------+
           /       /|
@@ -44,7 +44,7 @@ public class Dados {
         """
     };
 
-    public static String[] faces = {
+    private static final String[] faces = {
         """
         +-------+
         |       |
@@ -90,12 +90,12 @@ public class Dados {
     };
 
     // Garante que todas as linhas tenham a mesma largura
-    public static String formata(String s, int tamanho) {
+    private static String formata(String s, int tamanho) {
         return String.format("%-" + tamanho + "s", s);
     }
 
     // Imprime dois dados lado a lado, alinhados
-    public static void printSideBySide(String esquerda, String direita, int tamanho) {
+    private static void printSideBySide(String esquerda, String direita, int tamanho) {
         String[] l1 = esquerda.split("\n");
         String[] l2 = direita.split("\n");
         int linhas = Math.max(l1.length, l2.length);
@@ -105,5 +105,17 @@ public class Dados {
             String b = (i < l2.length ? l2[i] : "");
             System.out.println(a + "    " + b);
         }
+    }
+
+    public static int getFramesLength() {
+        return frames.length;
+    }
+
+    public static void imprimirAnimacao(int frame1, int frame2, int tamanho) {
+        printSideBySide(frames[frame1], frames[frame2], tamanho);
+    }
+
+    public static void imprimirResultado(int jogador, int dealer, int tamanho) {
+        printSideBySide(faces[jogador - 1], faces[dealer - 1], tamanho);
     }
 }
