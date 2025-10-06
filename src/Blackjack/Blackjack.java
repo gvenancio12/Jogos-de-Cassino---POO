@@ -8,12 +8,12 @@ import View.*;
 import java.util.Scanner;
 
 public class Blackjack {
-    Scanner sc;
-    Jogador jogador;
-    Dealer dealer = new Dealer("Dealer");
-    Baralho baralho = new Baralho();
-    int fichasApostadas = 0;
-    boolean acabou = false;
+    private Scanner sc;
+    private Jogador jogador;
+    private Dealer dealer = new Dealer("Dealer");
+    private Baralho baralho = new Baralho();
+    private int fichasApostadas = 0;
+    private boolean acabou = false;
     
     public Blackjack(Scanner sc,Jogador jogador){
         this.sc = sc;

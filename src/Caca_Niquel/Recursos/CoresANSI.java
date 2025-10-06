@@ -1,6 +1,6 @@
 package Caca_Niquel.Recursos;
 
-// Esta classe contém constantes para aplicar cores e estilos ANSI ao terminal.
+// Esta classe contém constantes para aplicar cores e estilos ANSI ao terminal
 public class CoresANSI {
     // Reset para voltar à cor padrão do terminal.
     public static final String RESET = "\u001B[0m";

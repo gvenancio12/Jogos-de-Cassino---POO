@@ -14,8 +14,8 @@ import Caca_Niquel.Recursos.CoresANSI;
 import Caca_Niquel.Recursos.Simbolo;
 
 public class Caca_Niquel {
-    Scanner sc;
-    Jogador jogador;
+    private Scanner sc;
+    private Jogador jogador;
     Random random = new Random();
     private boolean acabou = false;
 
